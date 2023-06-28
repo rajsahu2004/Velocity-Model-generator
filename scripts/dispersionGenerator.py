@@ -49,7 +49,7 @@ for folder in os.listdir(currentFolder):
                     pad, df = True, 0.5
                     transform = "fdbf"
                     fmin, fmax = 0.5, 10
-                    vmin, vmax, nvel, vspace = 1, 1350, 400, "linear"
+                    vmin, vmax, nvel, vspace = 100, 1350, 100, "linear"
                     fdbf_weighting = "sqrt"
                     fdbf_steering = "cylindrical"
                     snr = False

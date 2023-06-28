@@ -51,7 +51,7 @@ else
     echo "seismic_files/two_layer created"
 fi
 
-i=1
+i=2
 cs2=400
 cp2=$(generateVp $cs2)
 ro02=$(generateDensity $cp2)
@@ -61,7 +61,7 @@ ro01=$(generateDensity $cp1)
 thickness=5
 sizez=150
 noOfLayers=`expr $sizez / $thickness`
-z=75
+z=40
 file_name="data/two_layer/`expr $i + 1`.csv"
 echo "z,Vs,Vp,rho" > $file_name
 currentDepth=0
@@ -90,7 +90,7 @@ intt=def poly=0 x=0,1000,2000,4000 z=$z,$z,$z,$z cp=$cp2 cs=$cs2 ro=$ro02
 
 xsrc1=0
 xsrc2=4000
-dxsrc=500
+dxsrc=10
 
 xsrc=$xsrc1
 ishot=1
