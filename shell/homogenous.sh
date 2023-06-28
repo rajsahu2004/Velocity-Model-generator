@@ -45,14 +45,12 @@ else
     echo "seismic_files/homogenous created"
 fi
 
-noOfModels=50
-for ((i=0;i<$noOfModels;i++))
-do
-cs=$((RANDOM%950+400))
+i=1
+cs=800
 cp=$(generateVp $cs)
 ro0=$(generateDensity $cp)
 thickness=10
-sizez=220
+sizez=150
 noOfLayers=`expr $sizez / $thickness`
 file_name="data/homogenous/`expr $i + 1`.csv"
 echo "z,Vs,Vp,rho" > $file_name
@@ -72,12 +70,12 @@ fi
 folderLocation="seismic_files/homogenous/`expr $i + 1`"
 
 makewave w=g2 nt=2000 verbose=1 fmin=0.5 fmax=10 fp=3 shift=1 dt=0.001771 file_out=G1.su
-makemod sizex=1000 sizez=$sizez dx=10 dz=10 cp0=$cp cs0=$cs ro0=1037.6 file_base=$folderLocation/small_rec.su orig=0,0  \
+makemod sizex=4000 sizez=$sizez dx=5 dz=5 cp0=$cp cs0=$cs ro0=1037.6 file_base=$folderLocation/small_rec.su orig=0,0  \
 
 
 xsrc1=0
-xsrc2=500
-dxsrc=100
+xsrc2=4000
+dxsrc=500
 
 xsrc=$xsrc1
 ishot=1
