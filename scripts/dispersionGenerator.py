@@ -3,8 +3,8 @@ import os
 import time
 import swprocess
 
-main_folder = 'seismic_files/'
-save_folder = 'images/'
+main_folder = './seismic_files/'
+save_folder = './images/'
 if not os.path.exists(save_folder):
     os.mkdir(save_folder)
     print(f'\033[93m{save_folder}\033[0m created')
